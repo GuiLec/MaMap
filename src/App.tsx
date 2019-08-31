@@ -16,6 +16,7 @@ const App = () => {
           longitudeDelta: 0.0421,
         }}
         showsUserLocation={true}
+        provider="google"
       />
     </Fragment>
   );

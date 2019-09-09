@@ -1,6 +1,6 @@
 import React from 'react';
 import {MapPage} from './pages/MapPage';
-import {ThemeProvider} from 'styled-components';
+import {ThemeProvider} from './lib/styled';
 import {theme} from './lib/theme';
 
 // API key iOS : AIzaSyBQnjjZLmlg0Z-oax_LEVkB0-OzJ9lhyDM

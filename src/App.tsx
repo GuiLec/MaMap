@@ -1,14 +1,16 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {MapPage} from './pages/MapPage';
+import {ThemeProvider} from 'styled-components';
+import {theme} from './lib/theme';
 
 // API key iOS : AIzaSyBQnjjZLmlg0Z-oax_LEVkB0-OzJ9lhyDM
 // API key Android : AIzaSyBQnjjZLmlg0Z-oax_LEVkB0-OzJ9lhyDM
 
 const App = () => {
   return (
-    <Fragment>
+    <ThemeProvider theme={theme}>
       <MapPage />
-    </Fragment>
+    </ThemeProvider>
   );
 };
 

@@ -1,7 +1,15 @@
-import React from 'react';
+import React, {createRef} from 'react';
 import MapView from 'react-native-maps';
+import {useBaseMap} from './useBaseMap';
+
+const longitudeDelta = 0.01;
+const latitudeDelta = 0.005;
+const latitude = 48.815232;
+const longitude = 2.3488;
 
 export const BaseMap = () => {
+  useBaseMap();
+
   return (
     <MapView
       style={{flex: 1}}

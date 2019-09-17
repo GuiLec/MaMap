@@ -10,6 +10,7 @@ const longitude = 2.3488;
 
 export const MapPage = () => {
   const mapRef = createRef<MapView>();
+
   const centerMapOnMyLocation = () => {
     const region = {
       latitude: latitude,

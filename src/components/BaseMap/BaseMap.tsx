@@ -14,10 +14,10 @@ export const BaseMap = (props: Props) => {
       style={{flex: 1}}
       ref={props.mapView}
       region={{
-        latitude: 48.815232,
+        latitude: 48.82,
         longitude: 2.3488,
-        latitudeDelta: 0.005,
-        longitudeDelta: 0.01,
+        latitudeDelta: 0.05,
+        longitudeDelta: 0.1,
       }}
       showsUserLocation={true}
       provider="google"

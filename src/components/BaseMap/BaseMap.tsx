@@ -1,18 +1,18 @@
-import React, {createRef} from 'react';
+import React from 'react';
 import MapView from 'react-native-maps';
 import {useBaseMap} from './useBaseMap';
 
-const longitudeDelta = 0.01;
-const latitudeDelta = 0.005;
-const latitude = 48.815232;
-const longitude = 2.3488;
+interface Props {
+  mapView: React.RefObject<MapView>;
+}
 
-export const BaseMap = () => {
+export const BaseMap = (props: Props) => {
   useBaseMap();
 
   return (
     <MapView
       style={{flex: 1}}
+      ref={props.mapView}
       region={{
         latitude: 42.882004,
         longitude: 74.582748,

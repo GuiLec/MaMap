@@ -1,13 +1,30 @@
-import React from 'react';
+import React, {createRef} from 'react';
 import {BaseMap} from '../../components/BaseMap';
 import {styled} from '../../lib/styled';
+import MapView from 'react-native-maps';
+
+const longitudeDelta = 0.01;
+const latitudeDelta = 0.005;
+const latitude = 48.815232;
+const longitude = 2.3488;
 
 export const MapPage = () => {
+  const mapRef = createRef<MapView>();
+  const centerMapOnMyLocation = () => {
+    const region = {
+      latitude: latitude,
+      longitude: longitude,
+      latitudeDelta: latitudeDelta,
+      longitudeDelta: longitudeDelta,
+    };
+    mapRef.current && mapRef.current.animateToRegion(region, 2000);
+  };
+
   return (
     <Container>
-      <BaseMap />
+      <BaseMap mapView={mapRef} />
       <ButtonContainer>
-        <CenterButton>
+        <CenterButton onPress={centerMapOnMyLocation}>
           <CenterButtonText>Center</CenterButtonText>
         </CenterButton>
       </ButtonContainer>

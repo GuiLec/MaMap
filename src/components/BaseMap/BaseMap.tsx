@@ -4,6 +4,7 @@ import {useBaseMap} from './useBaseMap';
 
 interface Props {
   mapView: React.RefObject<MapView>;
+  children?: Element[];
 }
 
 export const BaseMap = (props: Props) => {
@@ -20,7 +21,8 @@ export const BaseMap = (props: Props) => {
         longitudeDelta: 0.1,
       }}
       showsUserLocation={true}
-      provider="google"
-    />
+      provider="google">
+      {props.children}
+    </MapView>
   );
 };

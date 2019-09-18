@@ -2,13 +2,27 @@ import React from 'react';
 import {BaseMap} from '../../components/BaseMap';
 import {styled} from '../../lib/styled';
 import {useBaseMap} from '../../components/BaseMap/useBaseMap';
-
+import {Marker} from '../../components/Marker/Marker';
+import bench from '../../res/images/bench.png';
 export const MapPage = () => {
   const {mapRef, centerMapOnMyLocation} = useBaseMap();
 
   return (
     <Container>
-      <BaseMap mapView={mapRef} />
+      <BaseMap mapView={mapRef}>
+        {[
+          <Marker
+            key="marker"
+            latitude={48.82}
+            longitude={2.3488}
+            imageSource={bench}
+            anchor={{x: 0.5, y: 1}}
+            onPress={() => {}}
+            isSelected={true}
+            counter={3}
+          />,
+        ]}
+      </BaseMap>
       <ButtonContainer>
         <CenterButton onPress={centerMapOnMyLocation}>
           <CenterButtonText>Center</CenterButtonText>

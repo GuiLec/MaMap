@@ -16,6 +16,7 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* MaMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MaMapTests.m */; };
+		3289B7AB23321408008F7DE5 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		32A8E7D26E3E50BE6EB81070 /* libPods-MaMap-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A37E12777DA69C5E22D264B9 /* libPods-MaMap-tvOS.a */; };
 		45AB0E9617801124DA62154B /* libPods-MaMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 561776EB0DFB6ACC0864253E /* libPods-MaMap.a */; };
 		87F35F7E9AA19EF94FBF2D8F /* libPods-MaMap-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2C208E059BF18EB39F619B /* libPods-MaMap-tvOSTests.a */; };
@@ -74,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3289B7AB23321408008F7DE5 /* JavaScriptCore.framework in Frameworks */,
 				ECB8E686FE20E16CA1D7ED7D /* libPods-MaMapTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,7 +150,6 @@
 				3D55B89F88C9C63AEF2EC1A8 /* Pods-MaMapTests.debug.xcconfig */,
 				3A07571DC44573126186F961 /* Pods-MaMapTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -291,7 +292,11 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = BAS9BT6QZW;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = BAS9BT6QZW;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -309,6 +314,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -601,7 +607,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D55B89F88C9C63AEF2EC1A8 /* Pods-MaMapTests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = BAS9BT6QZW;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -624,8 +631,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A07571DC44573126186F961 /* Pods-MaMapTests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = BAS9BT6QZW;
 				INFOPLIST_FILE = MaMapTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -647,7 +655,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = BAS9BT6QZW;
 				INFOPLIST_FILE = MaMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -656,6 +666,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MaMap;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -666,7 +677,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BAS9BT6QZW;
 				INFOPLIST_FILE = MaMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -675,6 +688,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MaMap;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

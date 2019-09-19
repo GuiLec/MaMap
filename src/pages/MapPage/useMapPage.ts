@@ -7,11 +7,12 @@ const longitudeDelta = 0.01;
 const latitudeDelta = 0.005;
 
 interface Marker {
+  id: string;
   latitude: number;
   longitude: number;
 }
 
-export const useBaseMap = () => {
+export const useMapPage = () => {
   const mapRef = createRef<MapView>();
 
   const centerMapOnMyLocation = async () => {
@@ -27,22 +28,35 @@ export const useBaseMap = () => {
 
   const [markersList, setMarkersList] = useState<Marker[]>(initialMarkersList);
 
-  const createMarker = async () => {
-    const position = await Geolocation.instance.getCurrentPosition();
+  const [isPositioningMarker, setIsPositioningMarker] = useState<boolean>(
+    false,
+  );
+
+  const createMarker = (marker: Marker) => {
     setMarkersList([
       ...markersList,
       {
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude,
+        id: `${markersList.length + 1}`,
+        latitude: marker.latitude,
+        longitude: marker.longitude,
       },
     ]);
   };
 
   useEffect(() => {
     (async () => {
-      centerMapOnMyLocation();
+      setTimeout(() => {
+        centerMapOnMyLocation();
+      }, 200);
     })();
   }, []);
 
-  return {mapRef, centerMapOnMyLocation, markersList, createMarker};
+  return {
+    mapRef,
+    centerMapOnMyLocation,
+    markersList,
+    createMarker,
+    isPositioningMarker,
+    setIsPositioningMarker,
+  };
 };

@@ -6,7 +6,12 @@ import {Marker} from '../../components/Marker/Marker';
 import bench from '../../res/images/bench.png';
 
 export const MapPage = () => {
-  const {mapRef, centerMapOnMyLocation, markersList} = useBaseMap();
+  const {
+    mapRef,
+    centerMapOnMyLocation,
+    markersList,
+    createMarker,
+  } = useBaseMap();
 
   return (
     <Container>
@@ -24,11 +29,16 @@ export const MapPage = () => {
           />
         ))}
       </BaseMap>
-      <ButtonContainer>
+      <CenterButtonContainer>
         <CenterButton onPress={centerMapOnMyLocation}>
           <CenterButtonText>Center</CenterButtonText>
         </CenterButton>
-      </ButtonContainer>
+      </CenterButtonContainer>
+      <CreateMakerButtonContainer>
+        <CenterButton onPress={createMarker}>
+          <CenterButtonText>+ Marker</CenterButtonText>
+        </CenterButton>
+      </CreateMakerButtonContainer>
     </Container>
   );
 };
@@ -37,10 +47,16 @@ const Container = styled.View`
   flex: 1;
 `;
 
-const ButtonContainer = styled.View`
+const CenterButtonContainer = styled.View`
   position: absolute;
   right: 30;
   bottom: 30;
+`;
+
+const CreateMakerButtonContainer = styled.View`
+  position: absolute;
+  right: 30;
+  bottom: 100;
 `;
 
 const CenterButton = styled.TouchableOpacity`

@@ -27,11 +27,22 @@ export const useBaseMap = () => {
 
   const [markersList, setMarkersList] = useState<Marker[]>(initialMarkersList);
 
+  const createMarker = async () => {
+    const position = await Geolocation.instance.getCurrentPosition();
+    setMarkersList([
+      ...markersList,
+      {
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+      },
+    ]);
+  };
+
   useEffect(() => {
     (async () => {
       centerMapOnMyLocation();
     })();
   }, []);
 
-  return {mapRef, centerMapOnMyLocation, markersList};
+  return {mapRef, centerMapOnMyLocation, markersList, createMarker};
 };

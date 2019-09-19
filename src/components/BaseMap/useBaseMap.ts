@@ -1,6 +1,7 @@
 import {useEffect, createRef} from 'react';
 import MapView from 'react-native-maps';
 import {Geolocation} from '../../lib/Geolocation';
+import {markersList} from '../../modules/markersList';
 
 const longitudeDelta = 0.01;
 const latitudeDelta = 0.005;
@@ -23,5 +24,5 @@ export const useBaseMap = () => {
     })();
   }, []);
 
-  return {mapRef, centerMapOnMyLocation};
+  return {mapRef, centerMapOnMyLocation, markersList};
 };

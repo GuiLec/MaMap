@@ -4,10 +4,9 @@ import {styled} from '../../lib/styled';
 import {useBaseMap} from '../../components/BaseMap/useBaseMap';
 import {Marker} from '../../components/Marker/Marker';
 import bench from '../../res/images/bench.png';
-import {markersList} from '../../modules/markersList';
 
 export const MapPage = () => {
-  const {mapRef, centerMapOnMyLocation} = useBaseMap();
+  const {mapRef, centerMapOnMyLocation, markersList} = useBaseMap();
 
   return (
     <Container>

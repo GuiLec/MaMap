@@ -1,10 +1,17 @@
 import {useEffect, createRef, useState} from 'react';
-import MapView from 'react-native-maps';
+import MapView, {Region} from 'react-native-maps';
 import {Geolocation} from '../../lib/Geolocation';
 import {markersList as initialMarkersList} from '../../modules/markersList';
 
 const longitudeDelta = 0.01;
 const latitudeDelta = 0.005;
+
+const initialMapCoords = {
+  latitude: 48.82,
+  longitude: 2.3488,
+  latitudeDelta: 0.05,
+  longitudeDelta: 0.1,
+};
 
 interface Marker {
   id: string;
@@ -32,6 +39,8 @@ export const useMapPage = () => {
     false,
   );
 
+  const [mapRegion, setMapRegion] = useState<Region>(initialMapCoords);
+
   const createMarker = (marker: Marker) => {
     setMarkersList([
       ...markersList,
@@ -58,5 +67,7 @@ export const useMapPage = () => {
     createMarker,
     isPositioningMarker,
     setIsPositioningMarker,
+    mapRegion,
+    setMapRegion,
   };
 };

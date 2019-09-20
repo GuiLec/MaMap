@@ -15,6 +15,8 @@ export const MapPage = () => {
     createMarker,
     isPositioningMarker,
     setIsPositioningMarker,
+    mapRegion,
+    setMapRegion,
   } = useMapPage();
 
   const onMapPress = (e: MapEvent) => {
@@ -30,7 +32,7 @@ export const MapPage = () => {
 
   return (
     <Container>
-      <BaseMap mapView={mapRef} onPress={onMapPress}>
+      <BaseMap mapView={mapRef} onPress={onMapPress} region={mapRegion}>
         {markersList.map(marker => (
           <Marker
             key={marker.id}

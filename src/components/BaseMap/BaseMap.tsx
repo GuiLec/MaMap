@@ -13,7 +13,7 @@ export const BaseMap = (props: Props) => {
     <MapView
       style={{flex: 1}}
       ref={props.mapView}
-      region={props.region}
+      initialRegion={props.region}
       onPress={props.onPress}
       showsUserLocation={true}
       provider="google">

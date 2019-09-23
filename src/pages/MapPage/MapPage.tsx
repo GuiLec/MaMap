@@ -53,7 +53,7 @@ export const MapPage = () => {
       <CreateMakerButtonContainer>
         <CreateMarkerButton
           onPress={() => {
-            setIsPositioningMarker(true);
+            setIsPositioningMarker(!isPositioningMarker);
           }}
           isActive={isPositioningMarker}>
           <ButtonText>+ Marker</ButtonText>

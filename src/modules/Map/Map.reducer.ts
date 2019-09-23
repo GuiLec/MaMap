@@ -2,49 +2,18 @@ import {createReducer} from 'typesafe-actions';
 import {MapActions} from './Map.actions';
 
 export interface MapState {
-  selectedMarkerObject: {
-    objectId: string;
-    objectType: MarkerObjectType;
-    address: string;
-  };
+  isPositioningMarker: boolean;
 }
 
-const initialState = {
-  selectedMarkerObject: {
-    objectId: '',
-    objectType: '',
-    address: '',
-  },
-} as const;
+const initialState: MapState = {
+  isPositioningMarker: false,
+};
 
 export const mapReducer = createReducer<MapState, MapActions>(initialState, {
-  SELECT_MARKER_OBJECT: (state, action) => {
+  SET_IS_POSITIONNING_MARKER: (state, action) => {
     return {
       ...state,
-      selectedMarkerObject: {
-        ...state.selectedMarkerObject,
-        ...action.payload,
-      },
-    };
-  },
-  DESELECT_MARKER_OBJECT: state => {
-    return {
-      ...state,
-      selectedMarkerObject: {
-        objectId: '',
-        objectType: '',
-        address: '',
-      },
-    };
-  },
-  SAVE_SELECTED_MARKER_OBJECT_ADDRESS: (state, action) => {
-    return {
-      ...state,
-      selectedMarkerObject: {
-        objectId: state.selectedMarkerObject.objectId,
-        objectType: state.selectedMarkerObject.objectType,
-        address: action.payload.address,
-      },
+      isPositioningMarker: action.payload.isPositioningMarker,
     };
   },
 });

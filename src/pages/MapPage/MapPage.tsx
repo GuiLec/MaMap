@@ -16,7 +16,6 @@ export const MapPage = () => {
     isPositioningMarker,
     setIsPositioningMarker,
     mapRegion,
-    setMapRegion,
   } = useMapPage();
 
   const onMapPress = (e: MapEvent) => {

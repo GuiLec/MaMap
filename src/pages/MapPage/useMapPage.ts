@@ -56,7 +56,7 @@ export const useMapPage = () => {
     (async () => {
       setTimeout(() => {
         centerMapOnMyLocation();
-      }, 200);
+      }, 500);
     })();
   }, []);
 

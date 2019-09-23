@@ -5,7 +5,7 @@ import {useMapPage} from './useMapPage';
 import {Marker} from '../../components/Marker/Marker';
 import bench from '../../res/images/bench.png';
 import {MapEvent} from 'react-native-maps';
-import {Alert} from 'react-native';
+import {CreateMarkerButton} from '../../components/CreateMarkerButton';
 
 export const MapPage = () => {
   const {
@@ -55,9 +55,7 @@ export const MapPage = () => {
           onPress={() => {
             setIsPositioningMarker(!isPositioningMarker);
           }}
-          isActive={isPositioningMarker}>
-          <ButtonText>+ Marker</ButtonText>
-        </CreateMarkerButton>
+          isActive={isPositioningMarker}></CreateMarkerButton>
       </CreateMakerButtonContainer>
     </Container>
   );
@@ -75,21 +73,13 @@ const CenterButtonContainer = styled.View`
 
 const CreateMakerButtonContainer = styled.View`
   position: absolute;
-  right: 30;
-  bottom: 100;
+  left: 30;
+  top: 100;
 `;
 
 const CenterButton = styled.TouchableOpacity`
   height: 30;
   background-color: ${props => props.theme.colors.white};
-  border-width: 2px;
-  border-color: ${props => props.theme.colors.black};
-`;
-
-const CreateMarkerButton = styled.TouchableOpacity<{isActive: boolean}>`
-  height: 30;
-  background-color: ${props =>
-    props.isActive ? props.theme.colors.black : props.theme.colors.white};
   border-width: 2px;
   border-color: ${props => props.theme.colors.black};
 `;

@@ -41,7 +41,7 @@ export const MapPage = () => {
             anchor={{x: 0.5, y: 1}}
             onPress={() => {}}
             isSelected={true}
-            counter={3}
+            counter={marker.counter}
           />
         ))}
       </BaseMap>

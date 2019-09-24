@@ -8,11 +8,13 @@ export const markersList = [
     id: '2',
     latitude: 48.9204,
     longitude: 2.3488,
+    counter: 17,
   },
   {
     id: '3',
     latitude: 48.8207,
     longitude: 2.39881,
+    counter: 1,
   },
   {
     id: '4',
@@ -23,5 +25,6 @@ export const markersList = [
     id: '5',
     latitude: 48.79209,
     longitude: 2.40488001,
+    counter: 1,
   },
 ];

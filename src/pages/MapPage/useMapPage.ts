@@ -17,6 +17,7 @@ interface Marker {
   id: string;
   latitude: number;
   longitude: number;
+  counter?: number;
 }
 
 export const useMapPage = () => {

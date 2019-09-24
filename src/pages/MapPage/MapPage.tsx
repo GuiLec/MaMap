@@ -74,7 +74,7 @@ const CenterButtonContainer = styled.View`
 const CreateMakerButtonContainer = styled.View`
   position: absolute;
   left: 30;
-  top: 100;
+  top: 30;
 `;
 
 const CenterButton = styled.TouchableOpacity`
